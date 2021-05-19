@@ -1,0 +1,19 @@
+class Solution {
+public:
+
+vector<vector<int>> permuteUnique(vector<int>& nums) {
+
+    vector<vector<int>> res;
+    const auto begin = nums.begin();
+    const auto end = nums.end();
+    std::sort(begin, end);
+
+    do
+    {
+        res.push_back(nums);
+    } 
+    while (std::next_permutation(begin, end));
+
+    return res;
+}
+};
